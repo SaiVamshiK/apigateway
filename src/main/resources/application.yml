@@ -25,6 +25,14 @@ spring:
               args:
                 name: DEPARTMENT-SERVICE
                 fallbackurl: forward:/departmentServiceDown
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
 eureka:
   client:
     register-with-eureka: true
